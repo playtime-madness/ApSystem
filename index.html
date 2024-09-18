@@ -1,13 +1,200 @@
 <!DOCTYPE html>
 <html>
+
+<style>
+    * {
+        font-family: monospace;
+    }
+
+    h3 {
+        margin-top: 0px;
+        ;
+    }
+
+    .sectionWrapper {
+        border: 1px solid grey;
+        padding: 10px;
+        width: 500px;
+        display: inline-block;
+    }
+
+    label {
+        font-weight: bold;
+        margin-bottom: 6px;
+        display: inline-block;
+        min-width: 100px;
+    }
+
+    .statWrapper input {
+        width: 50px;
+        border: 1px solid #c1c1c1;
+        border-radius: 2px;
+        padding: 2px;
+        font-size: 21px;
+    }
+
+    .btnActionWrapper {
+        display: flex;
+        flex-direction: column;
+
+        button {
+            margin-bottom: 5px;
+            width: 300px;
+        }
+    }
+</style>
+
 <head>
-<title>Ap System</title>
+    <title>Ap System</title>
 </head>
+
 <body>
 
 
-<h1>Ap system Heading</h1>
-<p>Placeholder paragraph</p>
+    <h1>Ap system Heading</h1>
+    <p>Placeholder paragraph</p>
+
+    <section class="sectionWrapper">
+        <h3>
+            Stats
+        </h3>
+
+        <div class="statWrapper">
+
+            <div>
+                <label> Strength</label>
+                <input type="number" id="statStrength">
+                <input type="checkbox" id="checkStrength" onclick="toggleStat('checkStrength' , 'statStrength' )">
+            </div>
+
+
+            <div>
+                <label> Speed </label>
+                <input type="number" id="statSpeed">
+                <input type="checkbox" id="checkSpeed" onclick="toggleStat('checkSpeed' , 'statSpeed' )">
+            </div>
+
+            <div>
+                <label> Agility </label>
+                <input type="number" id="statAgility">
+                <input type="checkbox" id="checkAgility" onclick="toggleStat('checkAgility' , 'statAgility' )">
+            </div>
+
+            <div>
+                <label> Resilience</label>
+                <input type="number">
+
+            </div>
+            <div>
+                <label> Awareness </label>
+                <input type="number">
+            </div>
+
+            <div>
+                <label> Knowledge</label>
+                <input type="number">
+            </div>
+            <div>
+                <label> Wisdom</label>
+                <input type="number">
+            </div>
+
+            <div>
+                <label> Presence </label>
+                <input type="number">
+            </div>
+            <div>
+                <label> Articulation </label>
+                <input type="number">
+            </div>
+
+
+
+        </div>
+
+    </section>
+
+
+    <section class="sectionWrapper">
+        <section class="">
+            <h3>
+                Actions
+            </h3>
+
+            <div>
+                <label> AP </label>
+                <div style="font-size: 18px;">
+                    <Span id="apCurrent"> . </Span>
+                    /
+                    <Span id="apMax"> max </Span>
+                </div>
+            </div>
+
+            <div style="margin-top: 10px; " class="btnActionWrapper">
+                <button onclick="useAction(3)"> Use action (3)</button>
+                <button onclick="useAction(2)"> Use action (2)</button>
+                <button onclick="useAction(1)"> Use action (1)</button>
+
+                <button onclick="nextTurn()"> Next turn </button>
+            </div>
+        </section>
+        <hr>
+        <section class="">
+            <input type="number" disabled id="statCalc"> </Span>
+
+        </section>
+    </section>
+
+
 
 </body>
+
 </html>
+
+
+<script>
+
+    var apCurrent = 3;
+    var apMax = 3;
+
+    var statCalc = 0;
+
+    document.getElementById("apCurrent").innerHTML = apCurrent;
+    document.getElementById("apMax").innerHTML = apMax;
+
+    function useAction(actionCost) {
+
+        if (apCurrent - actionCost >= 0) {
+
+            apCurrent -= actionCost;
+            document.getElementById("apCurrent").innerHTML = apCurrent;
+        }
+
+        console.log(apCurrent);
+    }
+
+    function nextTurn() {
+
+        apCurrent = apMax;
+        document.getElementById("apCurrent").innerHTML = apCurrent;
+
+
+        console.log(apCurrent);
+    }
+
+    function toggleStat(statCheckId, statId) {
+
+
+
+        if (document.getElementById(statCheckId).checked) {
+            statCalc += Number(document.getElementById(statId).value);
+
+        } else {
+            statCalc -= Number(document.getElementById(statId).value);
+        }
+
+        document.getElementById("statCalc").value = statCalc;
+    }
+
+
+</script>
