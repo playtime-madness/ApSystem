@@ -301,22 +301,41 @@
       </div>
     </div>
 
-    <div style="margin-top: 10px; " class="btnActionWrapper">
-
-      <button class="actionBtn" (click)="useAction(1)" [disabled]="!(apCurrent >= 1) "> Move 30ft (1) </button>
-      <button class="actionBtn" (click)="useAction(1)" [disabled]="!(apCurrent >= 1) "> Light Attack (1) </button>
-      <button class="actionBtn" (click)="useAction(1)" [disabled]="!(apCurrent >= 2) "> Heavy Attack (2) </button>
+    <div style="display: flex ; flex-direction: row; flex-wrap: nowrap; gap: 15px;">
+      <div style="margin-top: 10px; " class="btnActionWrapper w-100">
 
 
-      <button class="actionBtn" (click)="useAction(1)" [disabled]="!(apCurrent >= 1) "> Inspect </button>
-      <button class="actionBtn" (click)="useAction(1)" [disabled]="!(apCurrent >= 1) "> Use Object </button>
-      <button class="actionBtn" (click)="useAction(1)" [disabled]="!(apCurrent >= 1) "> Block </button>
+
+        <button class="actionBtn" (click)="useAction(1)" [disabled]="!(apCurrent >= 1) "> Move 30ft (1) </button>
 
 
-      <button class="nextBtn" (click)="nextTurn()"> Next turn </button>
+        <button class="actionBtn" (click)="useAction(1)" [disabled]="!(apCurrent >= 1) "> Inspect </button>
+        <button class="actionBtn" (click)="useAction(1)" [disabled]="!(apCurrent >= 1) "> Use Object </button>
+
+
+
+      </div>
+
+
+      <div style="margin-top: 10px; " class="btnActionWrapper w-100">
+
+
+
+
+        <button class="actionBtn" (click)="useAction(1)" [disabled]="!(apCurrent >= 1) "> Light Attack (1) </button>
+        <button class="actionBtn" (click)="useAction(1)" [disabled]="!(apCurrent >= 2) "> Heavy Attack (2) </button>
+
+        <button class="actionBtn" (click)="useAction(1)" [disabled]="!(apCurrent >= 1) "> Block </button>
+
+
+        <button class="nextBtn" (click)="nextTurn()"> Next turn </button>
+      </div>
+
     </div>
 
   </div>
+
+
 
   <hr>
   <section class="">
