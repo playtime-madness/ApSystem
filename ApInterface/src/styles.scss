@@ -1,1 +1,90 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "bootstrap/scss/bootstrap.scss";
+
+body {
+    background: #e4e4e4;
+    padding: 10px;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+
+
+.sectionWrapper {
+
+    width: 500px;
+    display: inline-block;
+
+    // background: var(--red-to-pink-to-purple-vertical-gradient);
+    background: whitesmoke;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+
+    box-shadow: 0px 3px 5px #a9a9a9;
+    margin: 5px;
+    border: 1px solid #d4d4d4;
+
+    @media only screen and (max-width: 600px) {
+        width: 100%;
+
+    }
+
+    .sectionInner {
+
+        width: 100%;
+        // background: white;
+        padding: 10px;
+
+    }
+
+    .section-flex {
+        display: flex;
+        justify-content: flex-start;
+        gap: 15px;
+        padding: 0;
+        flex-wrap: wrap;
+    }
+
+}
+
+.btnActionWrapper {
+    display: flex;
+    flex-direction: column;
+
+    button {
+        margin-bottom: 5px;
+        width: 100%;
+
+        border: none;
+        outline: none;
+        font-weight: bold;
+
+        padding: 4px;
+        border-radius: 5px;
+        width: 100%;
+
+        &:disabled {
+            background: lightgray !important;
+            color: grey !important;
+        }
+    }
+
+    .actionBtn {
+
+        background: rgb(249, 219, 234);
+        color: rgb(150, 64, 130);
+
+    }
+
+    .nextBtn {
+
+        margin-top: 15px;
+        background: rgb(255, 209, 222);
+        color: rgb(129, 36, 53);
+
+    }
+}
